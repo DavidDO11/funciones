@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta atrás o divisiones</title>
+</head>
+<body>
+    <h2>Introduce un número:</h2>
+    
+    <script>
+    function mostrar(num, limit, valor){
+        while(num > limit){
+            num = num - valor;
+            document.write(num + "<br>");
+        }
+    }
+    
+    const MSG_ENTRADA = "Introduce un número";
+    const LIMIT_PAR = 0;
+    const VALOR_PAR = 2; // Definiendo correctamente VALOR_PAR
+    const LIMIT_IMPAR = 1;
+    const VALOR_IMPAR = 1;
+    
+    let num = parseInt(prompt(MSG_ENTRADA)); // Convertir la entrada a número
+    
+    if (!isNaN(num)) { // Verificar que la entrada sea un número
+        if (num % 2 == 0) {
+            mostrar(num, LIMIT_PAR, VALOR_PAR);
+        } else {
+            mostrar(num, LIMIT_IMPAR, VALOR_IMPAR);
+        }
+    } else {
+        document.write("Por favor, introduce un número válido.");
+    }
+    </script>
+</body>
+</html>
